@@ -28,12 +28,10 @@ class HomeController: UIViewController {
                         self?.nearlyScorebats.append(score)
                     }
                 }
-                
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
                     self?.collectionView.reloadData()
                 }
-                
                 break
             case .failure(let error):
                 print("==> \(error.localizedDescription)")
@@ -63,8 +61,8 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource{
         let tableCell = self.tableView.dequeueReusableCell(withIdentifier: ScorebatNearlyCell.identifier, for: indexPath) as! ScorebatNearlyCell
         
         if self.nearlyScorebats.count == 0 { return tableCell }
-        tableCell.scorebat = self.nearlyScorebats[indexPath.row]
         
+        tableCell.scorebat = self.nearlyScorebats[indexPath.row]
         return tableCell
     }
     

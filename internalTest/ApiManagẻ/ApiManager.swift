@@ -7,10 +7,15 @@
 
 import Foundation
 
+/**
+ Singleton APIManger
+ */
 class ApiManager {
+    typealias ScorebatResulst = ((Result<[ScorebatModel], Error>) -> ())
+    
     private static var instant : ApiManager?
     private var decoder = JSONDecoder()
-    typealias ScorebatResulst = ((Result<[ScorebatModel], Error>) -> ())
+    private var session = URLSession.shared
     
     private init(){}
     
@@ -28,20 +33,21 @@ class ApiManager {
         guard let url = URL(string: url) else {
             return
         }
-        let session = URLSession.shared
-        let task = session.dataTask(with: url) { data, response, error in
+        
+        let task = self.session.dataTask(with: url) { data, response, error in
             if let e = error {
-                print(e)
+                completion(.failure(e))
                 return
             }
+            
             do {
                 var resuls = [ScorebatModel]()
                 let dataJson = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
                 for data in (dataJson as! [AnyObject]) {
                     resuls.append(ScorebatModel(with: data as! [String : Any]))
                 }
-                
                 completion(.success(resuls))
+                
             }
             catch {
                 completion(.failure(error))

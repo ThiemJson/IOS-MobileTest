@@ -31,6 +31,12 @@ extension Date {
                     && firstDateFormat.month == secondDateFormat.month
                     && firstDateFormat.day == secondDateFormat.day! - 1)
     }
+    
+    public static func getDateFromStr(with dateString : String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return dateFormatter.date(from:dateString)!
+    }
 }
 
 // MARK: - UIImage
@@ -43,7 +49,6 @@ extension UIImageView {
         
         guard let url = URL(string: urlString) else {
             return
-            
         }
         
         DispatchQueue.global().async {

@@ -61,11 +61,8 @@ class ScorebatTodayCell: UICollectionViewCell {
                     self?.thumbnailImage.backgroundColor = .clear
                     
                     self?.bottomView.layer.cornerRadius = (self?.thumbnailImage.frame.size.height)! / 9
-                    
                     self?.bottomView.layer.maskedCorners = [[.layerMinXMaxYCorner, .layerMaxXMaxYCorner]]
-                    
                     self?.bottomView.layer.masksToBounds =  true
-                    
                     self?.bottomView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
                 }
             })

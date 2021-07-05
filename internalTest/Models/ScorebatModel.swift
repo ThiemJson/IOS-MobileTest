@@ -20,7 +20,7 @@ struct ScorebatModel : Decodable {
         embed = json["embed"] as? String ?? "embed"
         url = json["url"] as? String ?? "url"
         thumbnail = json["thumbnail"] as? String ?? "thumbnail"
-        date = Utils.getDateFromStr(with: json["date"]! as! String) 
+        date = Date.getDateFromStr(with: json["date"]! as! String) 
         competition = Competition(with: json["competition"] as! [String : Any])
     }
 }
