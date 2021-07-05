@@ -17,5 +17,4 @@ class ScorebatTodayCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
 }
