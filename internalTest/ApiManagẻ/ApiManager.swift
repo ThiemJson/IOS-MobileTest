@@ -7,19 +7,19 @@
 
 import Foundation
 
-class ApiCaller {
-    private static var instant : ApiCaller?
+class ApiManager {
+    private static var instant : ApiManager?
     private var decoder = JSONDecoder()
     typealias ScorebatResulst = ((Result<[ScorebatModel], Error>) -> ())
     
     private init(){}
     
-    public static func shared() -> ApiCaller {
+    public static func shared() -> ApiManager {
         if let instant = self.instant {
             return instant
         }
         else {
-            self.instant = ApiCaller()
+            self.instant = ApiManager()
             return self.instant!
         }
     }

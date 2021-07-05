@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mCF-q3-l6o">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mCF-q3-l6o">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -42,7 +42,7 @@
                                                 </constraints>
                                             </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ajR-Fy-1zI">
-                                                <rect key="frame" x="0.0" y="41" width="414" height="191.5"/>
+                                                <rect key="frame" x="10" y="41" width="394" height="191.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="191.5" id="bJ4-Td-pBf"/>
@@ -85,8 +85,8 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="h8T-cL-jad" firstAttribute="top" secondItem="ajR-Fy-1zI" secondAttribute="bottom" id="7JC-HE-aB2"/>
-                                            <constraint firstItem="ajR-Fy-1zI" firstAttribute="leading" secondItem="9ZQ-Hu-JiM" secondAttribute="leading" id="BgL-WK-x58"/>
-                                            <constraint firstAttribute="trailing" secondItem="ajR-Fy-1zI" secondAttribute="trailing" id="Bx3-a2-8Sh"/>
+                                            <constraint firstItem="ajR-Fy-1zI" firstAttribute="leading" secondItem="9ZQ-Hu-JiM" secondAttribute="leading" constant="10" id="BgL-WK-x58"/>
+                                            <constraint firstAttribute="trailing" secondItem="ajR-Fy-1zI" secondAttribute="trailing" constant="10" id="Bx3-a2-8Sh"/>
                                             <constraint firstItem="q1K-vk-dNd" firstAttribute="top" secondItem="9ZQ-Hu-JiM" secondAttribute="top" id="DDY-Lf-Hti"/>
                                             <constraint firstItem="f6Z-1N-daq" firstAttribute="leading" secondItem="9ZQ-Hu-JiM" secondAttribute="leading" id="Fc1-t5-ekH"/>
                                             <constraint firstItem="f6Z-1N-daq" firstAttribute="top" secondItem="h8T-cL-jad" secondAttribute="bottom" id="HJi-2D-d9Z"/>

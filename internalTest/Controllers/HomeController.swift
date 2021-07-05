@@ -6,48 +6,46 @@
 //
 
 import UIKit
+import Combine
 
 class HomeController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableHeightLayout: NSLayoutConstraint!
     
-    var scorebats : [ScorebatModel]?{
-        didSet{
-            let currentDate = Calendar.current.dateComponents([.day, .year, .month], from: Date())
-            for score in scorebats! {
-                if (Calendar.current.dateComponents([.day, .year, .month], from: score.date) == currentDate){
-                    self.todayScorebats.append(score)
-                    continue
+    var todayScorebats = [ScorebatModel]()
+    var nearlyScorebats = [ScorebatModel]()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        ApiManager.shared().sendRequest(with: AppConst.url) { [weak self] completion in
+            switch completion {
+            case .success(let results):
+                for score in results {
+                    if score.date.isOnSameDay(with: Date()){
+                        self?.todayScorebats.append(score)
+                    }
+                    else{
+                        self?.nearlyScorebats.append(score)
+                    }
                 }
-                nearlyScorebats.append(score)
-            }
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.collectionView.reloadData()
+                
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                    self?.collectionView.reloadData()
+                }
+                
+                break
+            case .failure(let error):
+                print("==> \(error.localizedDescription)")
+                break
             }
         }
     }
-    
-    var todayScorebats = [ScorebatModel]()
-    var nearlyScorebats = [ScorebatModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableViewSetup()
         self.collectionViewSetup()
-        
-        ApiCaller.shared().sendRequest(with: AppConst.url) { [weak self] result in
-            switch result {
-            case .success(let scorebats):
-                self?.scorebats = scorebats
-                break
-            case .failure(let error):
-                print(error.localizedDescription)
-                break
-            }
-        }
     }
     
     deinit {
@@ -55,20 +53,17 @@ class HomeController: UIViewController {
     }
 }
 
-// MARK: UITableView Delegate, Datasource
+// MARK: NearlyScorebats UITableView Delegate, Datasource
 extension HomeController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.todayScorebats.count
+        return self.nearlyScorebats.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableCell = self.tableView.dequeueReusableCell(withIdentifier: ScorebatNearlyCell.identifier, for: indexPath) as! ScorebatNearlyCell
-        tableCell.selectionStyle = .none
         
-        if self.nearlyScorebats.count == 0 {return tableCell}
-        
-        tableCell.date.text = self.nearlyScorebats[indexPath.row].date.getFormattedDate()
-        tableCell.title.text = self.nearlyScorebats[indexPath.row].title
+        if self.nearlyScorebats.count == 0 { return tableCell }
+        tableCell.scorebat = self.nearlyScorebats[indexPath.row]
         
         return tableCell
     }
@@ -97,13 +92,14 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource{
         self.tableView.register(UINib(nibName: ScorebatNearlyCell.identifier, bundle: nil), forCellReuseIdentifier: ScorebatNearlyCell.identifier)
         self.tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         self.tableView.isScrollEnabled = false
+        
     }
 }
 
-// MARK: UICollectionView Delegate, Datasource
+// MARK: TodayScorebats UICollectionView Delegate, Datasource
 extension HomeController : UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return self.todayScorebats.count
     }
     
     private func collectionViewSetup(){
@@ -117,11 +113,9 @@ extension HomeController : UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionCell = self.collectionView.dequeueReusableCell(withReuseIdentifier: ScorebatTodayCell.identifier, for: indexPath) as! ScorebatTodayCell
         
-        if todayScorebats.count == 0 { return collectionCell }
+        if self.todayScorebats.count == 0 { return collectionCell }
         
-        collectionCell.competiveName.text = self.todayScorebats[indexPath.row].competition.name
-        collectionCell.title.text = self.todayScorebats[indexPath.row].title
-        
+        collectionCell.scorebat = self.todayScorebats[indexPath.row]
         return collectionCell
     }
     
