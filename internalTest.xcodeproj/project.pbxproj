@@ -9,21 +9,39 @@
 /* Begin PBXBuildFile section */
 		6325C26C2692C1D100C0331D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6325C26B2692C1D100C0331D /* AppDelegate.swift */; };
 		6325C26E2692C1D100C0331D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6325C26D2692C1D100C0331D /* SceneDelegate.swift */; };
-		6325C2702692C1D100C0331D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6325C26F2692C1D100C0331D /* ViewController.swift */; };
+		6325C2702692C1D100C0331D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6325C26F2692C1D100C0331D /* HomeController.swift */; };
 		6325C2732692C1D100C0331D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6325C2712692C1D100C0331D /* Main.storyboard */; };
 		6325C2752692C1D500C0331D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6325C2742692C1D500C0331D /* Assets.xcassets */; };
 		6325C2782692C1D500C0331D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6325C2762692C1D500C0331D /* LaunchScreen.storyboard */; };
+		6325C2832692C2DC00C0331D /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6325C2822692C2DC00C0331D /* AppConst.swift */; };
+		6325C2882692C37100C0331D /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6325C2872692C37100C0331D /* ApiCaller.swift */; };
+		6325C28A2692C3A700C0331D /* ScorebatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6325C2892692C3A700C0331D /* ScorebatModel.swift */; };
+		6325C28D2692D29500C0331D /* ScorebatTodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6325C28B2692D29500C0331D /* ScorebatTodayCell.swift */; };
+		6325C28E2692D29500C0331D /* ScorebatTodayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6325C28C2692D29500C0331D /* ScorebatTodayCell.xib */; };
+		6325C2912692D48600C0331D /* ScorebatNearlyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6325C28F2692D48600C0331D /* ScorebatNearlyCell.swift */; };
+		6325C2922692D48600C0331D /* ScorebatNearlyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6325C2902692D48600C0331D /* ScorebatNearlyCell.xib */; };
+		6325C2942692DD8C00C0331D /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6325C2932692DD8C00C0331D /* DetailController.swift */; };
+		6325C297269309C800C0331D /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6325C296269309C800C0331D /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6325C2682692C1D100C0331D /* internalTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = internalTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6325C26B2692C1D100C0331D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6325C26D2692C1D100C0331D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6325C26F2692C1D100C0331D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6325C26F2692C1D100C0331D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		6325C2722692C1D100C0331D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6325C2742692C1D500C0331D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6325C2772692C1D500C0331D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6325C2792692C1D500C0331D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6325C2822692C2DC00C0331D /* AppConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
+		6325C2872692C37100C0331D /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
+		6325C2892692C3A700C0331D /* ScorebatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorebatModel.swift; sourceTree = "<group>"; };
+		6325C28B2692D29500C0331D /* ScorebatTodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorebatTodayCell.swift; sourceTree = "<group>"; };
+		6325C28C2692D29500C0331D /* ScorebatTodayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScorebatTodayCell.xib; sourceTree = "<group>"; };
+		6325C28F2692D48600C0331D /* ScorebatNearlyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorebatNearlyCell.swift; sourceTree = "<group>"; };
+		6325C2902692D48600C0331D /* ScorebatNearlyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScorebatNearlyCell.xib; sourceTree = "<group>"; };
+		6325C2932692DD8C00C0331D /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		6325C296269309C800C0331D /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +74,72 @@
 		6325C26A2692C1D100C0331D /* internalTest */ = {
 			isa = PBXGroup;
 			children = (
-				6325C26B2692C1D100C0331D /* AppDelegate.swift */,
-				6325C26D2692C1D100C0331D /* SceneDelegate.swift */,
-				6325C26F2692C1D100C0331D /* ViewController.swift */,
-				6325C2712692C1D100C0331D /* Main.storyboard */,
+				6325C2862692C31900C0331D /* ApiCaller */,
+				6325C2842692C2E300C0331D /* Models */,
+				6325C2812692C2B200C0331D /* Utils */,
+				6325C2802692C2AA00C0331D /* Controllers */,
+				6325C27F2692C2A500C0331D /* Views */,
 				6325C2742692C1D500C0331D /* Assets.xcassets */,
-				6325C2762692C1D500C0331D /* LaunchScreen.storyboard */,
 				6325C2792692C1D500C0331D /* Info.plist */,
 			);
 			path = internalTest;
+			sourceTree = "<group>";
+		};
+		6325C27F2692C2A500C0331D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6325C2902692D48600C0331D /* ScorebatNearlyCell.xib */,
+				6325C28C2692D29500C0331D /* ScorebatTodayCell.xib */,
+				6325C2712692C1D100C0331D /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6325C2802692C2AA00C0331D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6325C26F2692C1D100C0331D /* HomeController.swift */,
+				6325C28B2692D29500C0331D /* ScorebatTodayCell.swift */,
+				6325C28F2692D48600C0331D /* ScorebatNearlyCell.swift */,
+				6325C2932692DD8C00C0331D /* DetailController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6325C2812692C2B200C0331D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6325C295269309B400C0331D /* Extension */,
+				6325C26B2692C1D100C0331D /* AppDelegate.swift */,
+				6325C26D2692C1D100C0331D /* SceneDelegate.swift */,
+				6325C2822692C2DC00C0331D /* AppConst.swift */,
+				6325C2762692C1D500C0331D /* LaunchScreen.storyboard */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6325C2842692C2E300C0331D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6325C2892692C3A700C0331D /* ScorebatModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6325C2862692C31900C0331D /* ApiCaller */ = {
+			isa = PBXGroup;
+			children = (
+				6325C2872692C37100C0331D /* ApiCaller.swift */,
+			);
+			path = ApiCaller;
+			sourceTree = "<group>";
+		};
+		6325C295269309B400C0331D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6325C296269309C800C0331D /* DateExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,8 +199,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6325C2922692D48600C0331D /* ScorebatNearlyCell.xib in Resources */,
 				6325C2782692C1D500C0331D /* LaunchScreen.storyboard in Resources */,
 				6325C2752692C1D500C0331D /* Assets.xcassets in Resources */,
+				6325C28E2692D29500C0331D /* ScorebatTodayCell.xib in Resources */,
 				6325C2732692C1D100C0331D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,9 +214,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6325C2702692C1D100C0331D /* ViewController.swift in Sources */,
+				6325C28A2692C3A700C0331D /* ScorebatModel.swift in Sources */,
+				6325C297269309C800C0331D /* DateExtension.swift in Sources */,
+				6325C2912692D48600C0331D /* ScorebatNearlyCell.swift in Sources */,
+				6325C28D2692D29500C0331D /* ScorebatTodayCell.swift in Sources */,
+				6325C2702692C1D100C0331D /* HomeController.swift in Sources */,
+				6325C2832692C2DC00C0331D /* AppConst.swift in Sources */,
 				6325C26C2692C1D100C0331D /* AppDelegate.swift in Sources */,
 				6325C26E2692C1D100C0331D /* SceneDelegate.swift in Sources */,
+				6325C2942692DD8C00C0331D /* DetailController.swift in Sources */,
+				6325C2882692C37100C0331D /* ApiCaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
