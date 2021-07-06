@@ -17,7 +17,7 @@ class ScorebatNearlyCell: UITableViewCell {
     
     @IBOutlet weak var thumbnailImage: UIImageView! {
         didSet{
-            thumbnailImage.layer.cornerRadius = thumbnailImage.frame.size.height / 8.5
+            thumbnailImage.layer.cornerRadius = thumbnailImage.frame.size.height / 9
             thumbnailImage.clipsToBounds = true
             thumbnailImage.backgroundColor = UIColor.systemGray5
         }
@@ -40,6 +40,12 @@ class ScorebatNearlyCell: UITableViewCell {
             title.clipsToBounds = true
         }
     }
+    
+    let loadedError : UIView = {
+        let uiView = UIView()
+        uiView.translatesAutoresizingMaskIntoConstraints = false
+        return uiView
+    }()
     
     override func awakeFromNib() {
         super.awakeFromNib()

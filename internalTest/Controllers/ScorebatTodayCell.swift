@@ -18,7 +18,7 @@ class ScorebatTodayCell: UICollectionViewCell {
     
     @IBOutlet weak var thumbnailImage: UIImageView! {
         didSet{
-            thumbnailImage.layer.cornerRadius = thumbnailImage.frame.size.height / 9
+            thumbnailImage.layer.cornerRadius = thumbnailImage.frame.size.height / 12
             thumbnailImage.clipsToBounds = true
             thumbnailImage.backgroundColor = UIColor.systemGray5
         }
@@ -60,7 +60,7 @@ class ScorebatTodayCell: UICollectionViewCell {
                     self?.thumbnailImage.image = uiImage
                     self?.thumbnailImage.backgroundColor = .clear
                     
-                    self?.bottomView.layer.cornerRadius = (self?.thumbnailImage.frame.size.height)! / 9
+                    self?.bottomView.layer.cornerRadius = (self?.thumbnailImage.frame.size.height)! / 12
                     self?.bottomView.layer.maskedCorners = [[.layerMinXMaxYCorner, .layerMaxXMaxYCorner]]
                     self?.bottomView.layer.masksToBounds =  true
                     self?.bottomView.backgroundColor = UIColor.black.withAlphaComponent(0.5)

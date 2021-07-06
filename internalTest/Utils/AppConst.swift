@@ -6,6 +6,10 @@
 //
 
 import Foundation
-class AppConst {
+struct AppConst {
     public static let url = "https://www.scorebat.com/video-api/v1"
+    
+    struct Segue {
+        public static let goToDetail = "goToDetail"
+    }
 }

@@ -8,20 +8,20 @@
 import Foundation
 
 struct ScorebatModel : Decodable {
-    let title : String
-    let embed : String
-    let url : String
-    let thumbnail: String
-    let date : Date
-    let competition : Competition
+    var title : String
+    var embed : String
+    var url : String
+    var thumbnail: String
+    var date : Date
+    var competition : Competition
     
     init(with json: [String : Any]){
-        title = json["title"] as? String ?? "title"
-        embed = json["embed"] as? String ?? "embed"
-        url = json["url"] as? String ?? "url"
-        thumbnail = json["thumbnail"] as? String ?? "thumbnail"
-        date = Date.getDateFromStr(with: json["date"]! as! String) 
-        competition = Competition(with: json["competition"] as! [String : Any])
+        self.title = json["title"] as? String ?? "title"
+        self.embed = json["embed"] as? String ?? "embed"
+        self.url = json["url"] as? String ?? "url"
+        self.thumbnail = json["thumbnail"] as? String ?? "thumbnail"
+        self.date = Date.getDateFromStr(with: json["date"]! as! String)
+        self.competition = Competition(with: json["competition"] as! [String : Any])
     }
 }
 

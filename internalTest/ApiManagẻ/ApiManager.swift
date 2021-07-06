@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum APIError: Error {
+    case invalidURL
+    case internetDisconnected
+}
+
 /**
  Singleton APIManger
  */
