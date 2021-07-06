@@ -23,14 +23,23 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         self.tableViewSetup()
         self.collectionViewSetup()
-        self.title = "Scorebat"
-        
         self.performRequest()
         
-        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
         self.scrollView.addSubview(refreshControl)
         self.scrollView.alwaysBounceVertical = true
+        self.scrollView.delegate = self
+        
+        self.title = "Scorebat"
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let defaultOffset = -40.0
+        if scrollView.contentOffset.y < CGFloat(defaultOffset) {return}
+        
+        let alpha = max(0, 1 - (abs(CGFloat(defaultOffset) - scrollView.contentOffset.y) / (self.collectionView.frame.size.height)))
+        
+        self.collectionView.alpha = alpha
     }
     
     deinit {
