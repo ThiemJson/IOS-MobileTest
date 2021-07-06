@@ -23,7 +23,7 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         self.tableViewSetup()
         self.collectionViewSetup()
-        self.title = "Scorebats"
+        self.title = "Scorebat"
         
         self.performRequest()
         
