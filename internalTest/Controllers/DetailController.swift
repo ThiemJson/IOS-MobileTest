@@ -37,13 +37,6 @@ class DetailController: UIViewController {
         self.loadWebview()
     }
     
-    // MARK: WebView
-    private func loadWebview(){
-        if let scorebat = self.scorebat {
-            self.webView?.loadHTMLString(scorebat.embed, baseURL: nil)
-        }
-    }
-    
     override func viewDidDisappear(_ animated: Bool) {
         self.webView.stopLoading()
     }
@@ -51,6 +44,11 @@ class DetailController: UIViewController {
 
 // MARK: WebkitDelegate
 extension DetailController : WKNavigationDelegate {
+    private func loadWebview(){
+        if let scorebat = self.scorebat {
+            self.webView?.loadHTMLString(scorebat.embed, baseURL: nil)
+        }
+    }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         if let scorebat = self.scorebat {
             self.scorebatTitle?.text = scorebat.title

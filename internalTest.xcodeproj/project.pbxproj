@@ -91,6 +91,7 @@
 				6325C2902692D48600C0331D /* ScorebatNearlyCell.xib */,
 				6325C28C2692D29500C0331D /* ScorebatTodayCell.xib */,
 				6325C2712692C1D100C0331D /* Main.storyboard */,
+				6325C2762692C1D500C0331D /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,7 +114,6 @@
 				6325C26B2692C1D100C0331D /* AppDelegate.swift */,
 				6325C26D2692C1D100C0331D /* SceneDelegate.swift */,
 				6325C2822692C2DC00C0331D /* AppConst.swift */,
-				6325C2762692C1D500C0331D /* LaunchScreen.storyboard */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
