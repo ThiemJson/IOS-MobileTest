@@ -29,7 +29,7 @@ extension Date {
         
         return (firstDateFormat.year == secondDateFormat.year
                     && firstDateFormat.month == secondDateFormat.month
-                    && firstDateFormat.day == secondDateFormat.day! - 1)
+                    && firstDateFormat.day == secondDateFormat.day)
     }
     
     public static func getDateFromStr(with dateString : String) -> Date {

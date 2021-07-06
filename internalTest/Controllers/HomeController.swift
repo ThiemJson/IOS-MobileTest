@@ -53,6 +53,8 @@ class HomeController: UIViewController {
     
     private func performRequest(){
         ApiManager.shared().sendRequest(with: AppConst.url) { [weak self] completion in
+            self?.todayScorebats = []
+            self?.nearlyScorebats = []
             
             switch completion {
             case .success(let results):
